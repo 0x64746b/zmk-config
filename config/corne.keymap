@@ -372,7 +372,7 @@
 //                                       ----------------------------------------          ---------------------------------------
     xxxxx        &none        &kp F4       &kp F3       &kp F2       &kp F1                  &none        &kp N7       &kp N8       &kp N9       &kp MINUS    xxxxx
     xxxxx        &none        &kp F8       &kp F7       &kp F6       &kp F5                  &kp SQT      &kp N4       &kp N5       &kp N6       &kp EQUAL    xxxxx
-    xxxxx        &none        &kp F12      &kp F11      &kp F10      &kp F9                  &kp GRAVE    &kp N1       &kp N2       &kp N3       &kp BSLH     xxxxx
+    xxxxx        &none        &kp F12      &kp F11      &kp F10      &kp F9                  &kp NUBS     &kp N1       &kp N2       &kp N3       &kp BSLH     xxxxx
                                            &none        &none        &none                   &kp N0       &kp N0       &kp DOT
                 >;
             };
@@ -388,7 +388,7 @@
 //                                       ----------------------------------------          ---------------------------------------
     xxxxx        &kp AT       &kp HASH     &kp DLLR     &kp PRCNT    &kp CARET               &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR     &kp UNDER    xxxxx
     xxxxx        &kp EXCL     &none        &none        &none        &none                   &kp DQT      &none        &kp LBKT     &kp RBKT     &kp PLUS     xxxxx
-    xxxxx        &none        &none        &none        &none        &none                   &kp TILDE    &none        &kp LBRC     &kp RBRC     &kp PIPE     xxxxx
+    xxxxx        &none        &none        &none        &none        &none                   &kp LS(NUBS) &none        &kp LBRC     &kp RBRC     &kp PIPE     xxxxx
                                            &none        &none        &none                   &none        &none        &none
                 >;
             };
