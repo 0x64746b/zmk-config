@@ -16,7 +16,8 @@
 #define SYMBOLS 4
 #define COMPOSE 5
 #define WM_WIN  6
-#define STENO   7
+#define WM_OSX  7
+#define STENO   8
 
 // Keycodes
 #define xxxxx &none
@@ -168,6 +169,45 @@
                     , <&macro_release &kp LCTRL>
                     ;
             };
+
+            prev_desktop_osx: wm_osx_prev_desktop {
+                compatible = "zmk,behavior-macro";
+                label = "macOS Go To Previous Desktop";
+                #binding-cells = <0>;
+                wait-ms = <10>;
+                tap-ms = <20>;
+                bindings
+                    = <&macro_press &kp LCTRL>
+                    , <&macro_tap &kp LEFT>
+                    , <&macro_release &kp LCTRL>
+                    ;
+            };
+
+            next_desktop_osx: wm_osx_next_desktop {
+                compatible = "zmk,behavior-macro";
+                label = "macOS Go To Next Desktop";
+                #binding-cells = <0>;
+                wait-ms = <10>;
+                tap-ms = <20>;
+                bindings
+                    = <&macro_press &kp LCTRL>
+                    , <&macro_tap &kp RIGHT>
+                    , <&macro_release &kp LCTRL>
+                    ;
+            };
+
+            run_app_osx: wm_osx_run_app {
+                compatible = "zmk,behavior-macro";
+                label = "macOS Run Spotlight";
+                #binding-cells = <0>;
+                wait-ms = <10>;
+                tap-ms = <20>;
+                bindings
+                    = <&macro_press &kp LGUI>
+                    , <&macro_tap &kp SPACE>
+                    , <&macro_release &kp LGUI>
+                    ;
+            };
         };
 
         behaviors {
@@ -252,7 +292,7 @@
     xxxxx        &kp Q        &kp W        &kp F        &kp P        &kp B                  &kp J        &kp L        &kp U        &kp Y         &kp SEMI       &ploggle
     xxxxx        &kp A        &kp R        &kp S        LT_T         &kp G                  &kp M        LT_N         &kp E        &kp I         &kp O          xxxxx
     xxxxx        &lrm LALT Z  &lrm LGUI X  &lrm LCTRL C &lrm LSHFT D &kp V                  &kp K        &lrm RSHFT H &lrm RCTRL COMMA &lrm RGUI DOT &lrm LGUI FSLH xxxxx
-                                           &lte WM_WIN 0 LT_SFT      LT_BSPC                LT_RET       LT_SPACE     &sl COMPOSE
+                                           &lte WM_OSX 0 LT_SFT      LT_BSPC                LT_RET       LT_SPACE     &sl COMPOSE
                 >;
             };
 
@@ -349,6 +389,22 @@
     xxxxx        &bt BT_NXT   &none        &kp LGUI     &none        &none                   &prev_desktop_win &none   &none        &next_desktop_win &none   xxxxx
     xxxxx        &none        &none        &none        &none        &none                   &none        &none        &none        &none        &none        xxxxx
                                            &none        &none        &bt BT_CLR              &none        &none        &none
+                >;
+            };
+
+            wm_osx {
+                label = "WM: OSX";
+                bindings = <
+//             ------------------------------------------------------------------          ------------------------------------------------------------------
+//             |            |            |            |            |            |          |            |            |            |            |            |
+//             |            |            |   START    |            |            |          |   PRV_D    |            |            |   NXT_D    |            |
+//             |            |            |            |            |            |          |            |            |            |            |            |
+//             --------------------------|            |            |            |          |            |            |            |--------------------------
+//                                       ----------------------------------------          ---------------------------------------
+    xxxxx        &bt BT_SEL 0 &none        &none        &none        &none                   &none        &none        &none        &none        &none        xxxxx
+    xxxxx        &bt BT_NXT   &none        &kp F4       &none        &none                   &prev_desktop_osx &none   &exposee_osx &next_desktop_osx &none   xxxxx
+    xxxxx        &none        &none        &none        &none        &none                   &none        &none        &none        &none        &none        xxxxx
+                                           &none        &none        &bt BT_CLR              &none        &run_app_osx &none
                 >;
             };
 
