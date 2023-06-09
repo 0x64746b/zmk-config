@@ -126,6 +126,19 @@
                     ;
             };
 
+            exposee_osx: wm_osx_exposee {
+                compatible = "zmk,behavior-macro";
+                label = "macOS Exposee";
+                #binding-cells = <0>;
+                wait-ms = <10>;
+                tap-ms = <20>;
+                bindings
+                    = <&macro_press &kp LCTRL>
+                    , <&macro_tap &kp UP>
+                    , <&macro_release &kp LCTRL>
+                    ;
+            };
+
             prev_desktop_win: wm_win_prev_desktop {
                 compatible = "zmk,behavior-macro";
                 label = "Win10 Go To Previous Desktop";
@@ -193,7 +206,7 @@
                 label = "Layer-tap the exposee macro";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;
-                bindings = <&mo>, <&exposee_win>;
+                bindings = <&mo>, <&exposee_osx>;
             };
 
             lsk: layer_sticky_key {
