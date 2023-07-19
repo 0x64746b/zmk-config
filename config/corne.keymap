@@ -348,7 +348,7 @@
                 label = "Send ESC on shifted ENTER";
                 #binding-cells = <0>;
                 bindings = <&kp ENTER>, <&kp ESCAPE>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
+                mods = <(MOD_LSFT)>;
             };
 
             tab_spc: tab_space {
@@ -356,7 +356,7 @@
                 label = "Send TAB on shifted SPACE";
                 #binding-cells = <0>;
                 bindings = <&kp SPACE>, <&kp TAB>;
-                mods = <(MOD_LSFT|MOD_RSFT)>;
+                mods = <(MOD_LSFT)>;
             };
         };
 
@@ -374,7 +374,7 @@
 //                                       ----------------------------------------          ---------------------------------------
     xxxxx        &kp Q        &kp W        &kp F        &kp P        &kp B                  &kp J        &kp L        &kp U        &kp Y         &kp SEMI       &ploggle
     xxxxx        &kp A        &kp R        &kp S        LT_T         &kp G                  &kp M        LT_N         &kp E        &kp I         &kp O          xxxxx
-    xxxxx        &lrm LALT Z  &lrm LGUI X  &lrm LCTRL C &lrm LSHFT D &kp V                  &kp K        &lrm RSHFT H &lrm RCTRL COMMA &lrm RGUI DOT &lrm LGUI FSLH xxxxx
+    xxxxx        &lrm LALT Z  &lrm LGUI X  &lrm LCTRL C &lrm RSHFT D &kp V                  &kp K        &lrm RSHFT H &lrm RCTRL COMMA &lrm RGUI DOT &lrm LGUI FSLH xxxxx
                                            LT_EXP       LT_SFT       LT_BSPC                LT_EE        LT_TS        &sl COMPOSE
                 >;
             };
