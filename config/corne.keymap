@@ -30,8 +30,8 @@
 #define LT_BSPC &lt FUN_NUM BSPC
 //    Right
 #define LT_N &lt SYMBOLS N
-#define LT_EE &lee FUN_NUM 0
-#define LT_SPACE &lt MOD_ARR SPACE
+#define LT_EE &lee FUN_NUM &none
+#define LT_TS &lts MOD_ARR &none
 #define LT_ESC &tyl COMPOSE ESC
 
 
@@ -334,12 +334,29 @@
                 bindings = <&mo>, <&esc_ent>;
             };
 
+            lts: layer_tab_space {
+                compatible = "zmk,behavior-hold-tap";
+                label = "Layer-tap the mod-morphed SPACE key";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                flavor = "tap-preferred";
+                bindings = <&mo>, <&tab_spc>;
+            };
+
             esc_ent: escape_enter {
                 compatible = "zmk,behavior-mod-morph";
                 label = "Send ESC on shifted ENTER";
                 #binding-cells = <0>;
                 bindings = <&kp ENTER>, <&kp ESCAPE>;
-                mods = <(MOD_LSFT|MOD_RSFT)>; 
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+
+            tab_spc: tab_space {
+                compatible = "zmk,behavior-mod-morph";
+                label = "Send TAB on shifted SPACE";
+                #binding-cells = <0>;
+                bindings = <&kp SPACE>, <&kp TAB>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
             };
         };
 
@@ -358,7 +375,7 @@
     xxxxx        &kp Q        &kp W        &kp F        &kp P        &kp B                  &kp J        &kp L        &kp U        &kp Y         &kp SEMI       &ploggle
     xxxxx        &kp A        &kp R        &kp S        LT_T         &kp G                  &kp M        LT_N         &kp E        &kp I         &kp O          xxxxx
     xxxxx        &lrm LALT Z  &lrm LGUI X  &lrm LCTRL C &lrm LSHFT D &kp V                  &kp K        &lrm RSHFT H &lrm RCTRL COMMA &lrm RGUI DOT &lrm LGUI FSLH xxxxx
-                                           LT_EXP       LT_SFT       LT_BSPC                LT_EE        LT_SPACE     &sl COMPOSE
+                                           LT_EXP       LT_SFT       LT_BSPC                LT_EE        LT_TS        &sl COMPOSE
                 >;
             };
 
